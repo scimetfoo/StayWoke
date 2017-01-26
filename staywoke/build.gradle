@@ -30,6 +30,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
 }
 
 dependencies {
@@ -59,6 +63,8 @@ bintray {
         publish = true
     }
 }
+
+
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
