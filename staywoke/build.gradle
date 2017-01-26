@@ -1,4 +1,9 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+version = "1.0.0"
+group="com.github.murtaza0xff"
 
 ext {
     PUBLISH_GROUP_ID = 'com.murtaza0xff'
@@ -36,4 +41,21 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
+def siteUrl = 'https://github.com/murtaza0xff/staywoke'
+def gitUrl = 'https://github.com/murtaza0xff/staywoke.git'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        repo = "staywoke"
+        name = "staywoke"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
+}
