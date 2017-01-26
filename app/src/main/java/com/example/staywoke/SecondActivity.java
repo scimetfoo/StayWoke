@@ -12,9 +12,6 @@ import com.murtaza0xff.staywoke.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by murtaza on 21/1/17.
- */
 
 public class SecondActivity extends AppCompatActivity {
 

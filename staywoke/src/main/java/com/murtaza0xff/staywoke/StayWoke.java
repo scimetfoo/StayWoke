@@ -3,34 +3,40 @@ package com.murtaza0xff.staywoke;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.WindowManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StayWoke implements Application.ActivityLifecycleCallbacks {
+public final class StayWoke implements Application.ActivityLifecycleCallbacks {
 
 
     private List<Class<?>> activities;
     private Application application;
 
 
+    /**
+     * Use StayWoke.init(...) to keep the specified activities awake irrespective of the idleness
+     * from the users.
+     * <pre>
+     * {@code StayWoke.init(getApplication(), MainActivity.class, SecondActivity.class, ThirdActivity.class);
+     * }
+     * </pre>
+     * @param application Pass in the application using `getApplication()`
+     * @param activities The activities that should keep the screen awake.
+     */
+
+    @NonNull
+    public static StayWoke init(@NonNull Application application, @NonNull Class... activities){
+        return new StayWoke(application, activities);
+    }
+
     private StayWoke(Application application, Class... activities) {
         this.application = application;
         this.activities = new ArrayList<>();
         register();
         addActivities(activities);
-    }
-
-    /**
-     * BindView annotated fields and methods in the specified {@link Activity}. The current content
-     * view is used as the view root.
-     *
-     * @param
-     */
-
-    public static StayWoke init(Application application, Class... activities){
-        return new StayWoke(application, activities);
     }
 
 
