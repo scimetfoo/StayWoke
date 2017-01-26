@@ -28,5 +28,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-    compile project(":staywoke")
+    compile 'com.github.murtaza0xff:staywoke:1.0.0'
 }
