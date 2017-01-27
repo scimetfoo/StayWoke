@@ -1,1 +1,1 @@
-include ':app', ':staywoke'
+include ':example', ':staywoke'
