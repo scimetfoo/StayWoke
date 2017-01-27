@@ -104,9 +104,6 @@ task androidSourcesJar(type: Jar) {
     from android.sourceSets.main.java.source
 }
 
-subprojects {
-    tasks.withType(Javadoc).all { enabled = false }
-}
 
 artifacts {
     if (project.getPlugins().hasPlugin('com.android.library')) {
