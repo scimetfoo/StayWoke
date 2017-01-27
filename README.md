@@ -11,7 +11,7 @@
 
 Here's an example implementation of StayWoke which will keep the screen
  on it two activities: `MainActivity` and `SecondActivity`, and the WakeUp class
- which will turn the screen on automcaitcally when you deploy the app on to the phone
+ which will turn the screen on automatically when you deploy the app on to the phone
 
 ```java
 public class MainActivity extends AppCompatActivity {
