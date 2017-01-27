@@ -7,7 +7,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 
-final class WakeUp {
+public final class WakeUp {
 
     /**
      * Use WakeUp.init(...) to turn on the screen after deployment without

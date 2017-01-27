@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import java.util.List;
 
-final class StayWoke implements Application.ActivityLifecycleCallbacks {
+public final class StayWoke implements Application.ActivityLifecycleCallbacks {
 
 
     private List<Class<?>> activities;
