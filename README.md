@@ -1,5 +1,7 @@
 # StayWoke
 
+[![](https://jitpack.io/v/murtaza0xff/staywoke.svg)](https://jitpack.io/#murtaza0xff/staywoke)
+
 **StayWoke essentially has two features:**
 
  - Keep the screen awake while on specified activities
