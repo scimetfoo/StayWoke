@@ -10,7 +10,7 @@
   on to the phone using `WakeUp.init(...)`
 
 Here's an example implementation of StayWoke which will keep the screen
-on when either `MainActivity` and `SecondActivity` is in the foreground: , and the WakeUp class which will turn the screen on automatically when you deploy the app on to the phone
+on when either `MainActivity` and `SecondActivity` is in the foreground, and the WakeUp class which will turn the screen on automatically when you deploy the app on to the phone
 
 ```java
 public class MainActivity extends AppCompatActivity {
