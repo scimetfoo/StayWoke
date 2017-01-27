@@ -15,14 +15,10 @@ Here's an example implementation of StayWoke which will keep the screen
 
 ```java
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.button)
-    Button button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
         WakeUp.init(this);
         // pass in any number of activity classes.
         StayWoke.init(getApplication(), MainActivity.class, SecondActivity.class);
