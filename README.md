@@ -46,7 +46,7 @@ Add the dependency to the app level build.gradle file:
 
 ```groovy
 dependencies {
-	        compile 'com.github.murtaza0xff:staywoke:1.0.0'
+    compile 'com.github.murtaza0xff:staywoke:1.0.0'
 }
 ```
 
