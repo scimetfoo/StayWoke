@@ -24,12 +24,33 @@ public class MainActivity extends AppCompatActivity {
         StayWoke.init(getApplication(), MainActivity.class, SecondActivity.class);
     }
 }
-````
+```
 
 Note: The use of both the features in combination is not necessary.
 They are both independent of each other.
 
-#License
+## Download
+
+Add jitpack to the project level build.gradle file:
+
+```groovy
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Add the dependency to the app level build.gradle file:
+
+```groovy
+dependencies {
+	        compile 'com.github.murtaza0xff:staywoke:1.0.0'
+}
+```
+
+## License
 
        Copyright 2017 Murtaza Akbari
 
