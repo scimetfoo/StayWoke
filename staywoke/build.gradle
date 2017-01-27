@@ -89,7 +89,39 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.source
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.source
+}
+
+subprojects {
+    tasks.withType(Javadoc).all { enabled = false }
+}
+
 artifacts {
-    archives sourcesJar
-    archives javadocJar
+    if (project.getPlugins().hasPlugin('com.android.library')) {
+        archives androidSourcesJar
+        archives androidJavadocsJar
+    } else {
+        archives sourcesJar
+        archives javadocJar
+    }
+}
+
+if (JavaVersion.current().isJava8Compatible()) {
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+        }
+    }
 }
